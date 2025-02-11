@@ -2,7 +2,7 @@ from sys import exit
 
 
 def iter_fact(n: int) -> int:
-    fact = 1
+    fact: int = 1
     if n == 0 or n == 1:
         return fact
     while n > 0:
@@ -22,12 +22,12 @@ def recurs_fact(n: int) -> int:
 def main() -> None:
     while True:
         try:
-            user_input = input('Enter a number: ')
+            user_input: str = input('Enter a number: ')
             if user_input == 'exit':
                 print('Thanks for trying my program!')
                 exit()
 
-            n = int(user_input)
+            n: int = int(user_input)
             print(f'Iterative: {n}! = {iter_fact(n)}')
             print(f'Recursive: {n}! = {recurs_fact(n)}')
         except ValueError:
