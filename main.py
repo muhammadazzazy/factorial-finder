@@ -20,22 +20,26 @@ def recurs_fact(n: int) -> int:
 
 
 def main() -> None:
+    exit_message: str = 'Exiting program...'
+    print('Welcome to The Factorial Finder!')
     while True:
         try:
             user_input: str = input('Enter a number: ')
             if user_input == 'exit':
-                print('Thanks for trying my program!')
+                print(exit_message)
                 exit()
 
             n: int = int(user_input)
-            print(f'Iterative: {n}! = {iter_fact(n)}')
-            print(f'Recursive: {n}! = {recurs_fact(n)}')
         except ValueError:
-            print('Invalid input...')
+            print('Please enter valid input...')
             continue
         except KeyboardInterrupt:
-            print('Exiting...')
+            print(exit_message)
             exit()
+
+        print(f'Iterative: {n}! = {iter_fact(n)}')
+
+        print(f'Recursive: {n}! = {recurs_fact(n)}')
 
 
 if __name__ == '__main__':
